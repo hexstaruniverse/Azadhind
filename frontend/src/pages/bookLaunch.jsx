@@ -1,12 +1,11 @@
-import React from 'react';
 import Navbar from '../components/Navbar.jsx';
 
-const bookLaunch = () => {
+const BookLaunch = () => {
   return (
-    <div className='w-full min-h-screen bg-black'>
+    <div className='w-full h-full'>
       <Navbar />
     </div>
   );
-};
+}
 
-export default bookLaunch;
+export default BookLaunch;

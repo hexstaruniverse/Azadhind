@@ -1,7 +1,29 @@
 @import "tailwindcss";
 
-
+/* --- Aspekta weights --- */
 @font-face {
-  font-family: "Poppins";
-  src: url("/src/font/Poppins-Regular.ttf") format("truetype");
+  font-family: "Aspekta";
+  src: url("./font/Aspekta/Aspekta-200.ttf") format("truetype");
+  font-weight: 200; /* maps to Tailwind: font-extralight or font-[200] */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aspekta";
+  src: url("./font/Aspekta/Aspekta-400.ttf") format("truetype");
+  font-weight: 400; /* Tailwind: font-normal or font-[400] */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Your @font-face blocks here (Poppins, Aspekta, Inter) */
+
+@theme {
+  --font-sans: "Poppins", sans-serif;    /* font-sans -> Poppins */
+  --font-aspekta: "Aspekta", sans-serif; /* gives you class: font-aspekta */
+  --font-inter: "Inter", sans-serif;     /* class: font-inter */
+}
+
+@layer base {
+  html { @apply font-sans; } /* global default = Poppins */
 }
