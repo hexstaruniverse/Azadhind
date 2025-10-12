@@ -22,7 +22,7 @@ const ContactUs = () => {
     }
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:7000/api/contact", {
+      const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/contact`, {
         name, 
         email,
         contact_number,

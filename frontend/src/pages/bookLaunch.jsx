@@ -56,7 +56,7 @@ const BookLaunch = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:7000/api/add', launch1Data);
+      const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/add`, launch1Data);
 
       // ✅ Extract MongoDB ID properly
       const newId = response.data.lead?._id;
@@ -67,7 +67,6 @@ const BookLaunch = () => {
       setRecordId(newId);
       localStorage.setItem('recordId', newId);
 
-      toast.success(response.data.message || "Lead registered successfully!");
       setStep(2);
     } catch (error) {
       console.error("Error saving Launch1:", error);
@@ -96,7 +95,7 @@ const BookLaunch = () => {
     }
 
     try {
-      await axios.put(`http://localhost:7000/api/update/${recordId}`, {
+      await axios.put(`${import.meta.env.VITE_SERVER_URL}/update/${recordId}`, {
         payload_mass: payload,
         target_quater: launch_quarter,
         target_altitude
