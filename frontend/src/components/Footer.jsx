@@ -35,12 +35,12 @@ const Footer = () => {
                 <button className="bg-red-600 border-red-600 text-white text-lg font-sans font-semibold tracking-light py-2.5 px-5 cursor-pointer" onClick={() => navigate('/book-launch')}>Book Launch</button>
                 <button className='flex justify-center items-center text-white text-lg font-sans font-semibold border border-[#F00000] py-2.5 px-5 cursor-pointer' onClick={() => navigate('/contact-us')}>Contact Us</button>
                 </div>
-                <div className="text-white text-lg font-sans tracking-tight">© {new Date().getFullYear()} Ocullo Technologies Pte. Ltd. Singapore</div>
+                <div className="text-white text-lg font-sans tracking-tight">© {new Date().getFullYear()} Ocullo Technology Pte. Ltd. Singapore</div>
             </div>
             <div className='flex flex-row justify-center items-start gap-30'>
             <div className='flex flex-col justify-center font-sans text-white items-start gap-5'>
                <div className='font-sans text-white text-lg font-bold'>Company</div>
-                <a href='https://ocullospace.com'>Occulo Space</a>
+                <a href='https://ocullospace.com'>Ocullo Space</a>
                 <a href='/about-us'>About Us</a>
                 <a href='https://ocullospace.com/news'>News</a>
                 <a href='#vision' onClick={(e) => handleScrollClick(e, "about-us", "vision")}>Vision</a>
