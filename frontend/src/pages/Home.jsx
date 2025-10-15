@@ -38,7 +38,7 @@ const Home = () => {
 
       <div id='Azad' className='w-full flex flex-col items-center justify-center py-13 gap-8'>
         <div className="justify-start"><span className="text-white text-7xl font-extralight font-aspekta tracking-wider">Nippon-Sparked,</span><span class="text-red-600 sm:text-7xl text-3xl font-extralight font-aspekta tracking-wider"> Malaysia</span><span className="text-white sm:text-7xl text-3xl font-extralight font-['Aspekta'] tracking-wider">-Launched</span></div>
-        <div className="sm:w-[800px] text-center justify-start text-white text-xl font-extralight font-inter leading-relaxed tracking-tight">AZAD is a prototype sounding rocket powered by a hybrid engine using HDPE + LOX. Engineered for safety, stability, and cost-efficiency, AZAD is the first step toward scalable and sustainable suborbital missions.</div>
+        <div className="sm:w-[800px] text-center justify-start text-white text-xl font-extralight font-inter leading-relaxed tracking-tight">AZAD is a prototype sounding rocket powered by a hybrid engine using HDPE + LOX. Engineered for safety, stability, and cost-effectiveness, AZAD represents the first step toward scalable and sustainable suborbital missions.</div>
       </div>
 
       {/* Rocket scroll section */}
@@ -162,7 +162,7 @@ const Home = () => {
 
         <div className='flex flex-col gap-5 justify-end items-end text-right'>
           <div className=""><span className="text-red-600 sm:text-7xl text-3xl font-extralight font-aspekta tracking-wider">HDPE + LOX</span><span className="text-white text-7xl font-extralight font-aspekta tracking-wider"> Engine</span></div>
-          <div className="w-[625px] text-right text-white sm:text-xl text-xs font-extralight font-inter leading-relaxed tracking-tight">AZAD’s hybrid engine combines liquid oxygen (LOX) with high-density polyethylene (HDPE) for efficient, controllable combustion and safer handling.</div>
+          <div className="w-[625px] text-right text-white sm:text-xl text-xs font-extralight font-inter leading-relaxed tracking-tight">AZAD’s hybrid engine combines liquid oxygen (LOX) and high-density polyethylene (HDPE) to achieve efficient, controllable combustion with improved safety and handling.</div>
           <div className='flex flex-col mt-15 gap-10'>
 
             <div className='flex flex-col'>

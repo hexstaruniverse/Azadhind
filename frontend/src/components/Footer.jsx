@@ -32,7 +32,7 @@ const Footer = () => {
             <div className='flex flex-col justify-start items-start gap-20'>
                 <img className='w-60 h-16' src={Azad} alt='Logo'/>
                 <div className='flex flex-row gap-20'>
-                <button className="bg-red-600 border-red-600 text-white text-lg font-sans font-semibold tracking-light py-2.5 px-5 cursor-pointer" onClick={() => navigate('/book-launch')}>Book Launch</button>
+                <button className="bg-red-600 border-red-600 text-white text-lg font-sans font-semibold tracking-light py-2.5 px-5 cursor-pointer" onClick={() => navigate('/book-launch')}>Book a Launch</button>
                 <button className='flex justify-center items-center text-white text-lg font-sans font-semibold border border-[#F00000] py-2.5 px-5 cursor-pointer' onClick={() => navigate('/contact-us')}>Contact Us</button>
                 </div>
                 <div className="text-white text-lg font-sans tracking-tight">© {new Date().getFullYear()} Ocullo Technology Pte. Ltd. Singapore</div>
@@ -40,14 +40,14 @@ const Footer = () => {
             <div className='flex flex-row justify-center items-start gap-30'>
             <div className='flex flex-col justify-center font-sans text-white items-start gap-5'>
                <div className='font-sans text-white text-lg font-bold'>Company</div>
-                <a href='https://ocullospace.com'>Ocullo Space</a>
+                <a href='https://ocullospace.com'>OculloSpace</a>
                 <a href='/about-us'>About Us</a>
                 <a href='https://ocullospace.com/news'>News</a>
                 <a href='#vision' onClick={(e) => handleScrollClick(e, "about-us", "vision")}>Vision</a>
             </div>
             <div className='flex flex-col justify-center font-sans text-white items-start gap-5'>
                 <div className='font-sans text-white text-lg font-bold'>Quick Links</div>
-                <a href='/book-launch'>Book Launch</a>
+                <a href='/book-launch'>Book a Launch</a>
                 <a href='/contact-us'>Contact Us</a>
                 <a href='https://ocullospace.com/privacy'>Privacy Policy</a>
                 <a href='https://ocullospace.com/terms'>Terms</a>
@@ -60,7 +60,7 @@ const Footer = () => {
             <div className='flex flex-col justify-center font-sans text-white items-start gap-5'>
                 <div className='font-sans text-white text-lg font-bold'>AZAD</div>
                 <a href='/about-us'>About</a>
-                <a href="#Azad" onClick={(e) => handleScrollClick(e, "home", "Azad")}>Specs</a>
+                <a href="#Azad" onClick={(e) => handleScrollClick(e, "home", "Azad")}>Technical Overview</a>
                 <a href="#launchloc" onClick={(e) => handleScrollClick(e, "home", "launchloc")}>Launch Location</a>
             </div>
             </div>
