@@ -35,7 +35,7 @@ const AboutUs = () => {
                 }}
                 >
                     <div className="justify-start pl-40 pt-85 text-white text-7xl font-extralight font-aspekta tracking-wider">About Us</div>
-                    <div className="pl-40 justify-start text-white text-xl font-extralight font-inter leading-relaxed tracking-tight">At OculloSpace, we are committed to building the next generation of hybrid rocket<br/> systems that make access to near-space safer, more reliable, and cost-efficient.<br/></div>
+                    <div className="pl-40 justify-start text-white text-xl font-extralight font-inter leading-relaxed tracking-tight">At OculloSpace, we are dedicated to developing the next generation of hybrid rocket<br/> systems that make access to near space safer, more reliable, and cost-effective.<br/></div>
             </div>
             <div id='vision' className='mt-30 flex flex-row gap-60 items-end text-right'>
                 <img src={AboutVision} alt='Vision' className='ml-25'/>
