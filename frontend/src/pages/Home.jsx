@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import VerticalBeforeAfter from '../components/VerticalBeforeAfter';
 import { useScrollFlags } from '../hooks/useScrollFlags';
 import { useRef } from 'react';
-import Japan from '../assets/Japan.svg';
+import Sarawak from '../assets/Sarawak.svg';
 import { GoDotFill } from "react-icons/go";
 import Engine from '../assets/Engine.svg';
 import NewsLetter from '../components/NewsLetter';
@@ -32,14 +32,16 @@ const Home = () => {
     <div className='w-full h-full bg-[rgba(4,4,4,1)] flex flex-col gap-5'>
       <Navbar />
 
-      <div className='sm:pl-25 sm:py-28 p-8 flex flex-col sm:gap-10 gap-5 relative container'>
+      <div className='sm:pl-25 sm:py-28 p-8 flex sm:gap-10 gap-5 relative container'>
+        <div className='flex flex-col gap-10'>
         <div className="justify-start sm:w-[883px] z-10"><span className="text-red-600 sm:text-7xl text-3xl font-extralight font-aspekta tracking-wider">A</span><span className="text-white sm:text-7xl text-3xl font-extralight font-aspekta tracking-wider">ZAD Sounding Rocket – Redefining Hybrid Propulsion</span></div>
         <a href='/book-launch' className='flex justify-center items-center w-36 h-10 text-white border border-[#F00000] font-sans'>Book Launch</a>
-        <img src={Rocket} alt="Rocket" className='sm:absolute sm:right-5 sm:mt-4' />
+        </div>
+        <img src={Rocket} alt="Rocket" className='' />
       </div>
 
       <div id='Azad' className='w-full flex flex-col items-center justify-center py-13 gap-8'>
-        <div className="justify-start"><span className="text-white text-7xl font-extralight font-aspekta tracking-wider">Nippon-Sparked,</span><span class="text-red-600 sm:text-7xl text-3xl font-extralight font-aspekta tracking-wider"> Malaysia</span><span className="text-white sm:text-7xl text-3xl font-extralight font-['Aspekta'] tracking-wider">-Launched</span></div>
+        <div className="justify-start"><span className="text-white text-7xl font-extralight font-aspekta tracking-wider">Singapore-Sparked,</span><span class="text-red-600 sm:text-7xl text-3xl font-extralight font-aspekta tracking-wider"> Malaysia</span><span className="text-white sm:text-7xl text-3xl font-extralight font-['Aspekta'] tracking-wider">-Launched</span></div>
         <div className="sm:w-[800px] text-center justify-start text-white text-xl font-extralight font-inter leading-relaxed tracking-tight">AZAD is a prototype sounding rocket powered by a hybrid engine using HDPE + LOX. Engineered for safety, stability, and cost-effectiveness, AZAD represents the first step toward scalable and sustainable suborbital missions.</div>
       </div>
 
@@ -119,7 +121,7 @@ const Home = () => {
 
           <div className='flex flex-col gap-2'>
             <div className="justify-start text-white sm:text-5xl text-2xl font-light leading-[57.12px] tracking-wide uppercase">LAUNCH WINDOW</div>
-            <div className="justify-start text-white sm:text-xl text-sm font-light leading-relaxed tracking-tight">TBC</div>
+            <div className="justify-start text-white sm:text-xl text-sm font-light leading-relaxed tracking-tight">March 2026</div>
           </div>
 
           <div className='flex flex-col gap-2'>
@@ -129,25 +131,25 @@ const Home = () => {
 
           <div className='flex flex-col gap-2'>
             <div className="justify-start text-white sm:text-5xl text-2xl font-light leading-[57.12px] tracking-wide uppercase">LAUNCH TYPE</div>
-            <div className="justify-start text-white sm:text-xl text-sm font-light leading-relaxed tracking-tight">Sea Launch</div>
+            <div className="justify-start text-white sm:text-xl text-sm font-light leading-relaxed tracking-tight">Mobile Launch Rail</div>
           </div>
 
           <div className='flex flex-col gap-2'>
             <div className="justify-start text-white sm:text-5xl text-2xl font-light leading-[57.12px] tracking-wide uppercase">LAUNCH SITE</div>
-            <div className="justify-start text-white sm:text-xl text-sm font-light leading-relaxed tracking-tight">Kyushu, Japan</div>
+            <div className="justify-start text-white sm:text-xl text-sm font-light leading-relaxed tracking-tight">Sarawak</div>
           </div>
 
         </div>
         <div className="relative container flex max-w-4xl w-full overflow-hidden rounded-xl">
-        <img src={Japan} alt="Launch Location" className="w-full h-auto object-cover" />
+        <img src={Sarawak} alt="Launch Location" className="w-full h-auto object-cover" />
 
         {/* overlay: black → transparent, going to the top */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 z-10" />
 
         {/* label above the overlay */}
-        <div className="absolute z-20 left-[35.5%] top-[58.5%] text-white text-lg font-extralight font-aspekta leading-snug tracking-tight flex flex-col items-start gap-2">
+        <div className="absolute z-20 left-[41.3%] top-[35%] text-white text-lg font-extralight font-aspekta leading-snug tracking-tight flex flex-col items-end gap-1">
+          <span>55 min from <br/>Bintulu Airport <br/>and Miri Airport </span>
           <GoDotFill />
-          <span>55 min from<br />Fukuoka Airport</span>
         </div>
       </div>
 
