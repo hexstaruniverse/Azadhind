@@ -10,7 +10,7 @@ import NewsLetter from '../components/NewsLetter';
 import Footer from '../components/Footer';
 import { useLocation } from "react-router-dom";
 import missionprofile from '../assets/missionprofile.svg';
-import Video from '../assets/launchVideo.mp4';
+import Video from '../assets/launchVideo2.MOV';
 import VertPh from '../components/VerticalRocketPhone';
 
 const Home = () => {
@@ -54,7 +54,7 @@ const Home = () => {
         <img
           src={Rocket}
           alt="Rocket"
-          className="w-full max-w-[280px] sm:max-w-[420px] xl:max-w-[520px] object-contain shrink-0"
+          className="hidden sm:block w-full max-w-[280px] sm:max-w-[420px] xl:max-w-[520px] object-contain shrink-0"
         />
       </div>
 
