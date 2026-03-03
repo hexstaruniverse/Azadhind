@@ -19,7 +19,7 @@ const AboutUs = () => {
   }, [location]);
 
   return (
-    <div className="w-full h-full bg-black">
+    <div className="w-full h-full bg-[rgba(4,4,4,1)]">
       <Navbar />
 
       {/* ================= HERO ================= */}

@@ -42,7 +42,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="w-full h-full bg-black">
+    <div className="w-full h-full bg-[rgba(4,4,4,1)]">
       <ToastContainer theme="dark" />
       <Navbar />
 
