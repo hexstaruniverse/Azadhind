@@ -33,7 +33,7 @@ const Home = () => {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      <div className="sm:pl-25 sm:py-28 p-8 pt-25 flex flex-col-reverse sm:flex-row justify-between items-center gap-5">
+      <div className="bg-[url('/src/assets/HeroBg.svg')] pl-25 py-28 flex flex-row justify-between items-center gap-5">
 
         <div className="flex flex-col gap-10 items-center sm:items-start text-center sm:text-left">
           <div className="sm:w-[883px] z-10">
@@ -58,12 +58,6 @@ const Home = () => {
           </a>
           </div>
         </div>
-
-        <img
-          src={Rocket}
-          alt="Rocket"
-          className="hidden sm:block w-full max-w-[280px] sm:max-w-[420px] xl:max-w-[700px] object-contain shrink-0"
-        />
       </div>
 
       {/* ================= AZAD INTRO ================= */}
@@ -92,7 +86,7 @@ const Home = () => {
       {/* ================= TECHNICAL OVERVIEW ================= */}
       {/* Desktop Version */ }
       <div className="hidden lg:block">
-      <div className="w-full flex flex-col sm:flex-row items-start justify-center gap-12 py-5">
+      <div className="w-full flex flex-row items-start justify-center py-5 px-15">
 
         {/* LEFT TEXT */}
         <div
@@ -339,11 +333,11 @@ const Home = () => {
       <div className="w-full flex flex-col items-center py-24 gap-24 text-center px-70">
         <div className="flex flex-col gap-5">
           <div>
-            <span className="text-red-600 sm:text-7xl text-3xl">Mission</span>
-            <span className="text-white sm:text-7xl text-3xl"> Profile</span>
+            <span className="text-red-600 text-7xl font-aspekta">Mission</span>
+            <span className="text-white text-7xl font-aspekta"> Profile</span>
           </div>
 
-          <div className="text-white sm:text-xl text-xs">
+          <div className="text-white text-xl font-extralight font-aspekta">
             Project Marine-Strike is an experimental high-altitude vehicle designed for high-velocity atmospheric piercing. By utilizing a heavy-duty fiberglass airframe and a unique twin-engine sustainer, the rocket is engineered to withstand Mach 1.5+ flight regimes before a controlled ballistic impact in open water.
 
           </div>

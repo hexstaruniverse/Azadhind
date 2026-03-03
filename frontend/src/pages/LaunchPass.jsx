@@ -163,7 +163,7 @@ const LaunchPass = () => {
 
       {/* HERO SECTION */}
       <div className="bg-[url('./assets/Launchbg.svg')] bg-cover bg-center w-full h-screen">
-        <div className='flex flex-col pt-90 pl-100'>
+        <div className='flex flex-col pt-70 pl-20 gap-5'>
           <span className="text-white text-7xl font-extralight font-aspekta">
             Get your <br/>
           </span>
@@ -182,14 +182,14 @@ const LaunchPass = () => {
       {/* STEP SECTION */}
       <div
         ref={stepSectionRef}  // ✅ Attach ref here
-        className="bg-[url('./assets/Launchbg2.svg')] bg-cover bg-center w-full h-screen mb-20"
+        className="bg-[url('./assets/Launchbg2.svg')] bg-cover bg-center w-full h-full mb-20"
       >
-        <div className="flex flex-col gap-4 items-center justify-center h-full">
-          <div className="font-aspekta font-extralight text-red-600 sm:text-7xl">
+        <div className="flex flex-col gap-4 items-center pt-20 justify-center h-full">
+          <div className="font-aspekta font-extralight text-red-600 text-7xl">
             Step - {step}
           </div>
 
-          <div className="flex justify-center items-center w-full sm:w-auto">
+          <div className="flex justify-center items-center w-auto">
 
             {step === 1 && (
               <LaunchPass1

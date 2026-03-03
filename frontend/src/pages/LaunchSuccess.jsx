@@ -61,7 +61,7 @@ const LaunchSuccess = () => {
     <div className='w-full h-full bg-black'>
       <Navbar />
 
-      <div className="bg-[url('./assets/LaunchSuccess.svg')] bg-cover bg-center w-[1600px] h-[1200px]">
+      <div className="bg-[url('./assets/LaunchSuccessbg.png')] w-full h-screen bg-cover">
 
         <div className='flex flex-col items-end pt-40 gap-6'>
 

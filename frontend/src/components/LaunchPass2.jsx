@@ -11,6 +11,7 @@ const LaunchPass2 = ({
 }) => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [checked, setChecked] = useState(false);
 
   const handleSubmitClick = async () => {
     if (isSubmitting) return
@@ -243,53 +244,63 @@ const LaunchPass2 = ({
               </div>
 
               {/* Consent */}
-              <label className="flex items-start gap-3 cursor-pointer max-w-xl">
-                <input
-                  type="checkbox"
-                  className="hidden peer"
-                  checked={shippingDetails.consent}
-                  onChange={(e) =>
-                    setShippingDetails({
-                      ...shippingDetails,
-                      consent: e.target.checked,
-                    })
-                  }
-                />
+               <label className="flex items-start gap-3 cursor-pointer max-w-xl">
+      
+      {/* Hidden Native Checkbox */}
+      <input
+        type="checkbox"
+        className="sr-only"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      />
 
-                <div className="mt-1 w-5 h-5 
-                  bg-black 
-                  border border-gray-500
-                  rounded-[30%]
-                  flex items-center justify-center
-                  peer-checked:bg-red-600
-                  peer-checked:border-red-600
-                  transition-all duration-200"
-                >
-                  <svg
-                    className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
+      {/* Custom Styled Square Box */}
+      <div
+        className={`
+          w-6 h-6
+          bg-black
+          border border-gray-500
+          rounded-md
+          flex items-center justify-center
+          transition-all duration-200
+          flex-shrink-0
+          ${checked ? "border-white bg-red-600" : ""}
+        `}
+      >
+        {checked && (
+          <svg
+            className="w-4 h-4 text-white"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        )}
+      </div>
 
-                <span className="text-sm text-gray-300 leading-relaxed">
-                  I have read and consent to{" "}
-                  <span className="text-white font-medium">Azad</span>{" "}
-                  processing my information in accordance with the{" "}
-                  <a href="https://ocullospace.com/privacy" className="text-white underline">
-                    Privacy Statement
-                  </a>{" "}
-                  and{" "}
-                  <a href="#" className="text-white underline">
-                    Cookie Policy
-                  </a>.
-                </span>
-              </label>
-
+      {/* Consent Text */}
+      <span className="text-sm text-gray-300 leading-relaxed">
+        I have read and consent to{" "}
+        <span className="text-white font-medium">Azad</span>{" "}
+        processing my information in accordance with the{" "}
+        <a
+          href="https://ocullospace.com/privacy"
+          className="text-white underline"
+        >
+          Privacy Statement
+        </a>{" "}
+        and{" "}
+        <a href="#" className="text-white underline">
+          Cookie Policy
+        </a>.
+      </span>
+    </label>
             </div>
           </div>
         </div>
