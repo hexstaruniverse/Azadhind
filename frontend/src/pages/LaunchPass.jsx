@@ -162,7 +162,7 @@ const LaunchPass = () => {
       <Navbar />
 
       {/* HERO SECTION */}
-      <div className="bg-[url('./assets/Launchbg.svg')] bg-cover bg-center w-full h-screen">
+      <div className="bg-[url('./assets/Launchbg.svg')] bg-cover w-full h-screen">
         <div className='flex flex-col pt-70 pl-20 gap-5'>
           <span className="text-white text-7xl font-extralight font-aspekta">
             Get your <br/>

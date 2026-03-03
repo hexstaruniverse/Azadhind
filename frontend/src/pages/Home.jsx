@@ -39,8 +39,8 @@ const Home = () => {
           <div className="sm:w-[883px] z-10">
             <span className="text-white sm:text-7xl text-3xl font-extralight font-aspekta tracking-wider">
               Project <span className="text-red-600 sm:text-7xl text-3xl font-extralight font-aspekta tracking-wider">
-              Karman-X1:
-            </span> Dual-Stage Rocket
+              Karman-X1:<br/>
+            </span> Dual-Stage<br/> Rocket
             </span>
           </div>
           <div className='inline-flex gap-5'>
@@ -333,8 +333,8 @@ const Home = () => {
       <div className="w-full flex flex-col items-center py-24 gap-24 text-center px-70">
         <div className="flex flex-col gap-5">
           <div>
-            <span className="text-red-600 text-7xl font-aspekta">Mission</span>
-            <span className="text-white text-7xl font-aspekta"> Profile</span>
+            <span className="text-red-600 text-7xl font-aspekta font-extralight">Mission</span>
+            <span className="text-white text-7xl font-aspekta font-extralight"> Profile</span>
           </div>
 
           <div className="text-white text-xl font-extralight font-aspekta">
