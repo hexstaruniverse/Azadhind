@@ -11,25 +11,27 @@ const LaunchPass2 = ({
 }) => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [checked, setChecked] = useState(false);
 
   const handleSubmitClick = async () => {
     if (isSubmitting) return
+
+    // ✅ Prevent checkout if consent not given
+    if (!shippingDetails.consent) {
+      alert("Please accept the Privacy Policy and Cookie Policy before proceeding.")
+      return
+    }
 
     setIsSubmitting(true)
 
     try {
       await handleCheckout()
     } finally {
-      // If redirect happens this won't execute
-      // If API fails, button becomes active again
       setIsSubmitting(false)
     }
   }
 
   return (
     <div className="w-full flex justify-center">
-      {/* Card */}
       <div
         className="
           w-210
@@ -46,163 +48,103 @@ const LaunchPass2 = ({
           </div>
 
           <div className='flex flex-row gap-25'>
+
+            {/* LEFT SECTION */}
             <div className='flex flex-col gap-2'>
 
               {/* Postal Code */}
-              <div className="flex flex-col gap-2 w-full auto">
+              <div className="flex flex-col gap-2">
                 <div className="mt-5 text-white text-xl font-inter font-extralight">
                   Postal Code*
                 </div>
                 <input
                   type="text"
-                  placeholder="0000111"
                   value={shippingDetails.postalCode}
                   onChange={(e) =>
                     setShippingDetails({ ...shippingDetails, postalCode: e.target.value })
                   }
-                  className="
-                    px-4 py-3
-                    w-80
-                    h-10
-                    bg-zinc-300/0
-                    rounded-md
-                    text-white
-                    font-inter font-extralight
-                    border border-white/70
-                    placeholder-white/30
-                  "
+                  className="px-4 py-3 w-80 h-10 bg-transparent rounded-md text-white border border-white/70 placeholder-white/30"
+                  placeholder="0000111"
                 />
               </div>
 
               {/* Address Line 1 */}
-              <div className="flex flex-col gap-2 w-full auto">
+              <div className="flex flex-col gap-2">
                 <div className="mt-5 text-white text-xl font-inter font-extralight">
                   Address Line 1*
                 </div>
                 <input
                   type="text"
-                  placeholder="Address"
                   value={shippingDetails.address1}
                   onChange={(e) =>
                     setShippingDetails({ ...shippingDetails, address1: e.target.value })
                   }
-                  className="
-                    px-4 py-3
-                    w-80
-                    h-10
-                    bg-zinc-300/0
-                    rounded-md
-                    text-white
-                    font-inter font-extralight
-                    border border-white/70
-                    placeholder-white/30
-                  "
+                  className="px-4 py-3 w-80 h-10 bg-transparent rounded-md text-white border border-white/70 placeholder-white/30"
+                  placeholder="Address"
                 />
               </div>
 
               {/* Address Line 2 */}
-              <div className="flex flex-col gap-2 w-full auto">
+              <div className="flex flex-col gap-2">
                 <div className="mt-5 text-white text-xl font-inter font-extralight">
                   Address Line 2*
                 </div>
                 <input
                   type="text"
-                  placeholder="Address"
                   value={shippingDetails.address2}
                   onChange={(e) =>
                     setShippingDetails({ ...shippingDetails, address2: e.target.value })
                   }
-                  className="
-                    px-4 py-3
-                    w-80
-                    h-10
-                    bg-zinc-300/0
-                    rounded-md
-                    text-white
-                    font-inter font-extralight
-                    border border-white/70
-                    placeholder-white/30
-                  "
+                  className="px-4 py-3 w-80 h-10 bg-transparent rounded-md text-white border border-white/70 placeholder-white/30"
+                  placeholder="Address"
                 />
               </div>
 
               {/* Country */}
-              <div className="flex flex-col gap-2 w-full auto">
+              <div className="flex flex-col gap-2">
                 <div className="mt-5 text-white text-xl font-inter font-extralight">
                   Country of Origin*
                 </div>
                 <input
                   type="text"
-                  placeholder="Singapore"
                   value={shippingDetails.country}
                   onChange={(e) =>
                     setShippingDetails({ ...shippingDetails, country: e.target.value })
                   }
-                  className="
-                    px-4 py-3
-                    w-80
-                    h-10
-                    bg-zinc-300/0
-                    rounded-md
-                    text-white
-                    font-inter font-extralight
-                    border border-white/70
-                    placeholder-white/30
-                  "
+                  className="px-4 py-3 w-80 h-10 bg-transparent rounded-md text-white border border-white/70 placeholder-white/30"
+                  placeholder="Singapore"
                 />
               </div>
 
               {/* Company */}
-              <div className="flex flex-col gap-2 w-full auto">
+              <div className="flex flex-col gap-2">
                 <div className="mt-5 text-white text-xl font-inter font-extralight">
                   Company/Institution Name
                 </div>
                 <input
                   type="text"
-                  placeholder="OculloSpace PTE LTD"
                   value={shippingDetails.companyOrInstitution}
                   onChange={(e) =>
-                    setShippingDetails({
-                      ...shippingDetails,
-                      companyOrInstitution: e.target.value
-                    })
+                    setShippingDetails({ ...shippingDetails, companyOrInstitution: e.target.value })
                   }
-                  className="
-                    px-4 py-3
-                    w-80
-                    h-10
-                    bg-zinc-300/0
-                    rounded-md
-                    text-white
-                    font-inter font-extralight
-                    border border-white/70
-                    placeholder-white/30
-                  "
+                  className="px-4 py-3 w-80 h-10 bg-transparent rounded-md text-white border border-white/70 placeholder-white/30"
+                  placeholder="OculloSpace PTE LTD"
                 />
               </div>
 
-              {/* Submit Button */}
+              {/* Submit */}
               <div className='flex justify-center'>
                 <button
                   disabled={isSubmitting}
-                  className="
-                    w-28 h-10
-                    mt-5 mb-5
-                    bg-zinc-300/0
-                    rounded-md
-                    border border-white/70
-                    text-white
-                    cursor-pointer
-                  "
                   onClick={handleSubmitClick}
+                  className="w-28 h-10 mt-5 mb-5 bg-transparent rounded-md border border-white/70 text-white"
                 >
                   {isSubmitting ? "Processing..." : "Submit"}
                 </button>
               </div>
-
             </div>
 
-            {/* Summary Section */}
+            {/* RIGHT SECTION */}
             <div className='flex flex-col gap-5'>
               <div className='text-white font-aspekta text-right'>
                 Summary
@@ -210,18 +152,10 @@ const LaunchPass2 = ({
 
               <div className='flex flex-row gap-15'>
                 <div className='flex flex-col gap-10'>
-                  <div className='text-left text-white text-xl font-extralight font-aspekta'>
-                    Item
-                  </div>
-                  <div className='text-left text-white text-xl font-extralight font-aspekta'>
-                    Subtotal
-                  </div>
-                  <div className='text-left text-white text-xl font-extralight font-aspekta'>
-                    Shipping
-                  </div>
-                  <div className='text-left text-white text-xl font-extralight font-aspekta'>
-                    Total
-                  </div>
+                  <div className='text-white text-xl font-extralight'>Item</div>
+                  <div className='text-white text-xl font-extralight'>Subtotal</div>
+                  <div className='text-white text-xl font-extralight'>Shipping</div>
+                  <div className='text-white text-xl font-extralight'>Total</div>
                 </div>
 
                 <div className='flex flex-col gap-10'>
@@ -234,7 +168,7 @@ const LaunchPass2 = ({
                   <div className='text-white text-xl font-light'>
                     {subtotal.toFixed(2)} USD
                   </div>
-                  <div className='text-white text-xl font-extralight'>
+                  <div className='text-white text-xl'>
                     {shipping.toFixed(2)} USD
                   </div>
                   <div className='text-white text-xl font-light'>
@@ -243,64 +177,65 @@ const LaunchPass2 = ({
                 </div>
               </div>
 
-              {/* Consent */}
-               <label className="flex items-start gap-3 cursor-pointer max-w-xl">
-      
-      {/* Hidden Native Checkbox */}
-      <input
-        type="checkbox"
-        className="sr-only"
-        checked={checked}
-        onChange={() => setChecked(!checked)}
-      />
+              {/* CONSENT CHECKBOX */}
+              <label className="flex items-start gap-3 cursor-pointer max-w-xl">
+                <input
+                  type="checkbox"
+                  className="sr-only"
+                  checked={shippingDetails.consent || false}
+                  onChange={(e) =>
+                    setShippingDetails({
+                      ...shippingDetails,
+                      consent: e.target.checked,
+                    })
+                  }
+                />
 
-      {/* Custom Styled Square Box */}
-      <div
-        className={`
-          w-6 h-6
-          bg-black
-          border border-gray-500
-          rounded-md
-          flex items-center justify-center
-          transition-all duration-200
-          flex-shrink-0
-          ${checked ? "border-white bg-red-600" : ""}
-        `}
-      >
-        {checked && (
-          <svg
-            className="w-4 h-4 text-white"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-        )}
-      </div>
+                <div
+                  className={`
+                    w-6 h-6
+                    border border-gray-500
+                    rounded-md
+                    flex items-center justify-center
+                    flex-shrink-0
+                    transition-all duration-200
+                    ${shippingDetails.consent ? "bg-red-600 border-red-600" : "bg-black"}
+                  `}
+                >
+                  {shippingDetails.consent && (
+                    <svg
+                      className="w-4 h-4 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  )}
+                </div>
 
-      {/* Consent Text */}
-      <span className="text-sm text-gray-300 leading-relaxed">
-        I have read and consent to{" "}
-        <span className="text-white font-medium">Azad</span>{" "}
-        processing my information in accordance with the{" "}
-        <a
-          href="https://ocullospace.com/privacy"
-          className="text-white underline"
-        >
-          Privacy Statement
-        </a>{" "}
-        and{" "}
-        <a href="#" className="text-white underline">
-          Cookie Policy
-        </a>.
-      </span>
-    </label>
+                <span className="text-sm text-gray-300 leading-relaxed">
+                  I have read and consent to{" "}
+                  <span className="text-white font-medium">Azad</span>{" "}
+                  processing my information in accordance with the{" "}
+                  <a
+                    href="https://ocullospace.com/privacy"
+                    className="text-white underline"
+                  >
+                    Privacy Statement
+                  </a>{" "}
+                  and{" "}
+                  <a href="#" className="text-white underline">
+                    Cookie Policy
+                  </a>.
+                </span>
+              </label>
+
             </div>
           </div>
         </div>
