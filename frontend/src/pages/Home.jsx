@@ -121,7 +121,7 @@ const Home = () => {
         </div>
 
         {/* ROCKET */}
-        <div ref={rocketRef} className="px-6 sm:px-35 flex justify-center">
+        <div ref={rocketRef} className="px-5 flex justify-center">
           <img src={RocketSkel} />
         </div>
 
@@ -300,7 +300,7 @@ const Home = () => {
       </div>
 
       {/* ================= Construction & Aerodynamics ================= */}
-      <div className="w-full flex flex-row gap-20">
+      <div className="w-full flex flex-row justify-end">
             <div className="flex flex-col gap-5 justify-center items-start text-left px-25 py-12 font-aspekta font-extralight">
           <div className='flex flex-col'>
             <span className="text-white text-7xl font-aspekta font-extralight"> Construction &</span>
@@ -311,21 +311,23 @@ const Home = () => {
           <div className="flex flex-col gap-10 mt-10 items-start">
           <div>
               <div className="text-white text-5xl">Fiberglass Mix Carbon fiber Resilience:</div>
-              <div className="text-white text-xl">Unlike carbon fiber, our filament-wound fiberglass provides superior RF transparency for onboard telemetry and higher impact resistance for the marine landing.</div>
+              <div className="text-white text-xl">Unlike carbon fiber, our filament-wound fiberglass provides superior RF transparency for<br/> onboard telemetry and higher impact resistance for the marine landing.</div>
             </div>
             <div>
               <div className="text-white text-5xl">Supersonic Stability:</div>
-              <div className="text-white text-xl">To prevent fin flutter at Mach 1.5, the rocket utilizes G10 fiberglass fins with a "beveled" leading edge, securely mounted with internal tip-to-tip reinforcements.</div>
+              <div className="text-white text-xl">To prevent fin flutter at Mach 1.5, the rocket utilizes G10 fiberglass fins with a<br/> "beveled" leading edge, securely mounted with internal tip-to-tip reinforcements.</div>
             </div>
 
             <div>
               <div className="text-white text-5xl">Sea Impact Design:</div>
-              <div className="text-white text-xl">The nose cone and forward sections are pressure-sealed to ensure the vehicle remains buoyant for recovery after the ballistic descent.</div>
+              <div className="text-white text-xl">The nose cone and forward sections are pressure-sealed to ensure the vehicle<br/> remains buoyant for recovery after the ballistic descent.</div>
             </div>
           </div>
           </div>
-          <div className='justify-end'>
+            <div className='justify-end'>
+          <div className='w-full h-full'>
           <img src={CA} alt="C&A" />
+          </div>
           </div>
       </div>
 
