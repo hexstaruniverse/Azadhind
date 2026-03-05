@@ -6,8 +6,12 @@ import { useSearchParams } from 'react-router-dom'
 import { Document, Page, pdfjs } from "react-pdf"
 import "react-pdf/dist/Page/AnnotationLayer.css"
 import "react-pdf/dist/Page/TextLayer.css"
+
 import { FiDownload } from "react-icons/fi"
-import FooterLine from '../assets/FooterLine.svg';
+import { FaWhatsapp, FaLinkedin, FaShareAlt } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
+
+import FooterLine from '../assets/FooterLine.svg'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -33,6 +37,7 @@ const LaunchSuccess = () => {
 
     const fetchTicket = async () => {
       try {
+
         const res = await axios.get(
           `${import.meta.env.VITE_SERVER_URL}/checkout/session/${sessionId}`
         )
@@ -57,11 +62,33 @@ const LaunchSuccess = () => {
 
   }, [sessionId])
 
+  /* Share text */
+  const shareText = "I just got my Launch Pass 🚀"
+
+  const whatsappShare = pdfUrl
+    ? `https://wa.me/?text=${encodeURIComponent(shareText + " " + pdfUrl)}`
+    : ""
+
+  const twitterShare = pdfUrl
+    ? `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pdfUrl)}`
+    : ""
+
+  const linkedinShare = pdfUrl
+    ? `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pdfUrl)}`
+    : ""
+
+  /* Copy link function */
+  const copyLink = () => {
+    if (pdfUrl) {
+      navigator.clipboard.writeText(pdfUrl)
+      alert("Link copied to clipboard!")
+    }
+  }
 
   return (
     <div className='w-full h-full bg-black'>
       <Navbar />
-
+      <div className='pt-18'>
       <div className="bg-[url('./assets/LaunchSuccessbg.png')] w-full h-[855px] bg-cover">
 
         <div className='flex flex-col items-end pt-40 gap-6'>
@@ -77,7 +104,7 @@ const LaunchSuccess = () => {
           </div>
 
           {/* PDF Section */}
-          <div className='pt-5 pr-60 flex flex-col items-end gap-4'>
+          <div className='pr-50 flex flex-col items-end gap-2'>
 
             {loading && (
               <div className='text-white text-xl'>
@@ -93,28 +120,76 @@ const LaunchSuccess = () => {
 
             {!loading && pdfUrl && !error && (
               <>
-                {/* PDF WITHOUT WHITE BORDER */}
+                {/* PDF */}
                 <div className='bg-transparent'>
                   <Document file={pdfUrl}>
                     <Page
                       pageNumber={1}
-                      width={700}
+                      width={750}
                       renderAnnotationLayer={false}
                       renderTextLayer={false}
                     />
                   </Document>
                 </div>
 
-                {/* Download Icon Only */}
-                <a
-                  href={pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className='bg-black/70 p-3 rounded-full hover:bg-red-600 transition'
-                  title="Download Ticket"
-                >
-                  <FiDownload className='text-white text-xl' />
-                </a>
+                {/* Share + Download Icons */}
+                <div className='flex items-center gap-6 text-base'>
+
+                  {/* Download */}
+                  <a
+                    href={pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='text-white hover:text-gray-300 transition'
+                    title="Download Ticket"
+                  >
+                    <FiDownload />
+                  </a>
+
+                  {/* WhatsApp */}
+                  <a
+                    href={whatsappShare}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='text-green-500 hover:text-green-400 transition'
+                    title="Share on WhatsApp"
+                  >
+                    <FaWhatsapp />
+                  </a>
+
+                  {/* LinkedIn */}
+                  <a
+                    href={linkedinShare}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='text-blue-600 hover:text-blue-500 transition'
+                    title="Share on LinkedIn"
+                  >
+                    <FaLinkedin />
+                  </a>
+
+                  {/* Twitter/X */}
+                  <a
+                    href={twitterShare}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='text-sky-500 hover:text-sky-400 transition'
+                    title="Share on X"
+                  >
+                    <FaXTwitter />
+                  </a>
+
+                  {/* Copy Link */}
+                  <button
+                    onClick={copyLink}
+                    className='text-red-500 hover:text-red-400 transition'
+                    title="Copy Share Link"
+                  >
+                    <FaShareAlt />
+                  </button>
+
+                </div>
+
               </>
             )}
 
@@ -122,6 +197,8 @@ const LaunchSuccess = () => {
 
         </div>
       </div>
+      </div>
+
       <img src={FooterLine} alt="FooterLine" className="w-full" />
       <Footer />
     </div>

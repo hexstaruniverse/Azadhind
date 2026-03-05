@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className="w-full h-full bg-black flex flex-col gap-5">
       <Navbar />
-
+      <div className='pt-30'>
       {/* ================= HERO ================= */}
       <div className="bg-[url('/src/assets/HeroBg.svg')] pl-25 py-28 flex flex-row justify-between items-center gap-5">
 
@@ -58,6 +58,7 @@ const Home = () => {
           </a>
           </div>
         </div>
+      </div>
       </div>
 
       {/* ================= AZAD INTRO ================= */}
@@ -121,7 +122,7 @@ const Home = () => {
         </div>
 
         {/* ROCKET */}
-        <div ref={rocketRef} className="px-5 flex justify-center">
+        <div ref={rocketRef} className="px-2 flex justify-center">
           <img src={RocketSkel} />
         </div>
 

@@ -74,7 +74,7 @@ const NewsLetter = () => {
         }}
       >
         {/* Toaster */}
-        <Toaster position="top-center" />
+        <Toaster position="top-center" theme="dark"/>
 
         <form
           onSubmit={handleSubmit}

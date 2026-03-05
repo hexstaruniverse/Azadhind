@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="max-sm:fixed z-50 w-full bg-[rgba(4,4,4,1)] border-b border-white/10">
+    <div className="fixed z-50 w-full bg-[rgba(4,4,4,1)] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-4 flex items-center justify-between">
 
         {/* Logo */}
@@ -33,7 +33,7 @@ const Navbar = () => {
           <a href="/about-us" className="text-white">About</a>
           <a href="#contact" onClick={handleAzadClick} className="text-white">Azad</a>
           <a href="/contact-us" className="text-white">Contact Us</a>
-          <a href="#" className="text-white">News</a>
+          <a href="https://ocullospace.com/news" className="text-white">News</a>
         </div>
 
         {/* Desktop CTA (UNCHANGED) */}

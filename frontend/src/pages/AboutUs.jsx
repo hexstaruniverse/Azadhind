@@ -21,6 +21,7 @@ const AboutUs = () => {
   return (
     <div className="w-full h-full bg-black">
       <Navbar />
+      <div className='pt-18'>
 
       {/* ================= HERO ================= */}
       <div
@@ -39,6 +40,7 @@ const AboutUs = () => {
           At OculloSpace, we are dedicated to developing the next generation of hybrid rocket<br className="hidden sm:block"/>
           systems that make access to near space safer, more reliable, and cost-effective.
         </div>
+      </div>
       </div>
 
       {/* ================= VISION ================= */}

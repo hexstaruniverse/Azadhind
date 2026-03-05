@@ -117,9 +117,9 @@ const BookLaunch = () => {
   return (
     <div className="w-full h-full bg-black">
       <ScrollToTop />
-      <Toaster position="top-center" />
+      <Toaster position="top-center" theme="dark"/>
       <Navbar />
-
+      <div className='pt-10'>
       <div className="mb-10 flex flex-col justify-center items-center px-6 sm:px-0">
 
         {/* ================= HEADER ================= */}
@@ -188,6 +188,7 @@ const BookLaunch = () => {
           </div>
         </div>
       </div>
+          </div>
       <img src={FooterLine} alt="FooterLine" className="w-full" />
       <Footer />
     </div>

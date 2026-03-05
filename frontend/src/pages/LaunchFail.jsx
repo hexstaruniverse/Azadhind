@@ -11,23 +11,20 @@ const LaunchFail = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/launch-pass"); // change to your target route
-    }, 5000);
+    },30000);
 
     return () => clearTimeout(timer); // cleanup
   }, [navigate]);
   return (
     <div className='w-full h-full bg-black'>
       <Navbar />
-      <div className="bg-[url('./assets/LaunchFail.svg')] bg-cover bg-center w-full h-screen">
+      <div className='pt-15'>
+      <div className="bg-[url('./assets/LaunchFail.svg')] bg-cover bg-center w-full h-[900px]">
         <div className='flex flex-col items-end pt-40 pr-20 gap-2'>
-        <div className='flex flex-col text-left'>
-            <span className='text-white text-7xl text-left font-extralight font-aspekta'>Opps!</span>
-<span className='text-white text-5xl text-left font-extralight font-aspekta'>Something weird happend
-Try Again...</span>
-</div>
+
         </div>
       </div>
-      <img src={FooterLine} alt="FooterLine" className="w-full" />
+      </div>
       <Footer />
     </div>
   )

@@ -45,7 +45,7 @@ const ContactUs = () => {
     <div className="w-full h-full bg-black">
       <ToastContainer theme="dark" />
       <Navbar />
-
+      <div className='pt-15'>
       {/* ================= HEADING ================= */}
       <div className="mb-40 flex flex-col justify-center items-center px-6 sm:px-0">
         <div className="flex flex-row gap-4 mb-5">
@@ -154,6 +154,7 @@ const ContactUs = () => {
 
           </div>
         </div>
+      </div>
       </div>
 
       <NewsLetter />

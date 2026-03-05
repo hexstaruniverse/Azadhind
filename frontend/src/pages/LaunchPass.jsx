@@ -159,9 +159,9 @@ const LaunchPass = () => {
 
   return (
     <div className='w-full h-full bg-black'>
-      <ToastContainer position="top-right" autoClose={3000} />
+      <ToastContainer position="top-right" autoClose={3000} theme='dark'/>
       <Navbar />
-
+      <div className='pt-18'>
       {/* HERO SECTION */}
       <div className="bg-[url('./assets/Launchbg.svg')] bg-cover w-full h-screen">
         <div className='flex flex-col pt-70 pl-20 gap-5'>
@@ -173,11 +173,12 @@ const LaunchPass = () => {
           </span>
           <button
             onClick={scrollToForm}
-            className='w-28 h-10 border border-red-600 font-aspekta text-white'
+            className='w-40 h-10 border border-red-600 font-aspekta text-white'
           >
-            Buy Pass
+            Buy Launch Pass
           </button>
         </div>
+      </div>
       </div>
 
       {/* STEP SECTION */}

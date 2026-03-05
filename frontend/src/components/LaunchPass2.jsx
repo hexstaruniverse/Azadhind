@@ -150,37 +150,56 @@ const LaunchPass2 = ({
                 Summary
               </div>
 
-              <div className='flex flex-row gap-15'>
-                <div className='flex flex-col gap-10'>
-                <div className='flex flex-row gap-20'>
-                  <div className='text-white text-xl font-aspekta font-extralight'>Item</div>
-                  <div className='flex flex-row gap-5'>
-                    <img src={Pass} alt="summary" className='w-12 h-4'/>
-                    <span className='text-white text-xl font-aspekta font-extralight'>
-                      1x Business Networking Pass
-                    </span>
-                  </div>
-                  </div>
-                  <div className='flex flex-row gap-15'>
-                  <div className='text-white text-xl font-aspekta font-extralight'>Subtotal</div>
-                  <div className='text-white text-right text-xl font-aspekta font-light'>
-                    {subtotal.toFixed(2)} USD
-                  </div>
-                  </div>
-                  <div className='flex flex-row gap-15'>
-                  <div className='text-white text-xl font-aspekta font-extralight'>Shipping</div>
-                  <div className='text-white text-right text-xl font-aspekta font-light'>
-                    {shipping.toFixed(2)} USD
-                  </div>
-                  </div>
-                  <div className='flex flex-row gap-23'>
-                  <div className='text-white text-xl font-aspekta font-extralight'>Total</div>
-                  <div className='text-white text-right text-xl font-aspekta font-light'>
-                    {total.toFixed(2)} USD
-                  </div>
-                  </div>
-                </div>
-              </div>
+             <div className="w-full">
+  <div className="grid grid-cols-[auto_1fr] w-full gap-y-10 items-start">
+
+    {/* Item */}
+    <div className="text-white text-xl font-aspekta font-extralight">
+      Item
+    </div>
+
+    <div className="flex justify-end items-start gap-2">
+      <img
+        src={Pass}
+        alt="summary"
+        className="w-12 h-4 mt-1 flex-shrink-0"
+      />
+
+      <span className="text-white text-xl font-aspekta font-extralight leading-snug text-right">
+        Business <br />
+        Networking Pass x 1
+      </span>
+    </div>
+
+    {/* Subtotal */}
+    <div className="text-white text-xl font-aspekta font-extralight">
+      Subtotal
+    </div>
+
+    <div className="text-white text-right text-xl font-aspekta font-light">
+      {subtotal.toFixed(2)} USD
+    </div>
+
+    {/* Shipping */}
+    <div className="text-white text-xl font-aspekta font-extralight">
+      Shipping
+    </div>
+
+    <div className="text-white text-right text-xl font-aspekta font-light">
+      {shipping.toFixed(2)} USD
+    </div>
+
+    {/* Total */}
+    <div className="text-white text-xl font-aspekta font-extralight">
+      Total
+    </div>
+
+    <div className="text-white text-right text-xl font-aspekta font-light">
+      {total.toFixed(2)} USD
+    </div>
+
+  </div>
+</div>
 
               {/* CONSENT CHECKBOX */}
               <label className="flex items-start gap-3 cursor-pointer max-w-xl">
@@ -229,14 +248,10 @@ const LaunchPass2 = ({
                   <span className="text-white font-medium">Azad</span>{" "}
                   processing my information in accordance with the{" "}
                   <a
-                    href="https://ocullospace.com/privacy"
+                    href="https://privacy.azadrocket.com/"
                     className="text-white underline"
                   >
                     Privacy Statement
-                  </a>{" "}
-                  and{" "}
-                  <a href="#" className="text-white underline">
-                    Cookie Policy
                   </a>.
                 </span>
               </label>
