@@ -1,4 +1,3 @@
-import Rocket from '../assets/HeroRocket.svg';
 import Navbar from '../components/Navbar';
 import CA from '../assets/C&A.svg';
 import VerticalBeforeAfter from '../components/VerticalBeforeAfter';
@@ -33,7 +32,7 @@ const Home = () => {
       <Navbar />
       <div className='pt-30'>
       {/* ================= HERO ================= */}
-      <div className="bg-[url('/src/assets/HeroBg.svg')] bg-cover bg-center px-6 sm:pl-25 sm:pr-10 py-14 sm:py-28 flex flex-col sm:flex-row justify-between items-center gap-8 sm:gap-5">
+      <div className="bg-none sm:bg-[url('/src/assets/HeroBg.svg')] sm:bg-cover sm:bg-center px-6 sm:pl-25 sm:pr-10 py-14 sm:py-28 flex flex-col sm:flex-row justify-between items-center gap-8 sm:gap-5">
 
         <div className="flex flex-col gap-8 sm:gap-10 items-center sm:items-start text-center sm:text-left">
           <div className="w-full sm:w-[883px] z-10">
