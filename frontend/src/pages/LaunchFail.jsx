@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import FooterLine from '../assets/FooterLine.svg';
 
 const LaunchFail = () => {
     const navigate = useNavigate();
@@ -19,7 +18,7 @@ const LaunchFail = () => {
     <div className='w-full h-full bg-black'>
       <Navbar />
       <div className='pt-15'>
-      <div className="bg-[url('./assets/LaunchFail.svg')] bg-cover bg-center w-full h-[900px]">
+      <div className="bg-[url('./assets/LaunchFail.svg')] bg-no-repeat bg-top bg-contain md:bg-center md:bg-cover w-full h-[460px] sm:h-[620px] md:h-[900px]">
         <div className='flex flex-col items-end pt-40 pr-20 gap-2'>
 
         </div>
