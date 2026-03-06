@@ -26,6 +26,30 @@ const LaunchSuccess = () => {
   const [loading, setLoading] = useState(true)
   const [pdfUrl, setPdfUrl] = useState(null)
   const [error, setError] = useState(null)
+  const [pdfWidth, setPdfWidth] = useState(750)
+
+  useEffect(() => {
+    const handleResize = () => {
+      const viewportWidth = window.innerWidth
+
+      if (viewportWidth < 640) {
+        setPdfWidth(viewportWidth - 32)
+        return
+      }
+
+      if (viewportWidth < 1024) {
+        setPdfWidth(Math.min(620, viewportWidth - 72))
+        return
+      }
+
+      setPdfWidth(750)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
 
@@ -121,26 +145,26 @@ const LaunchSuccess = () => {
 
 
   return (
-    <div className='w-full h-full bg-black'>
+    <div className='w-full min-h-screen bg-black'>
       <Navbar />
 
       <div className='pt-18'>
-        <div className="bg-[url('./assets/LaunchSuccessbg.png')] w-full h-[855px] bg-cover">
+        <div className="bg-[url('./assets/LaunchSuccessbg.png')] w-full min-h-[855px] bg-cover bg-center px-4 sm:px-8 lg:px-0">
 
-          <div className='flex flex-col items-end pt-40 gap-6'>
+          <div className='mx-auto flex w-full max-w-[1200px] flex-col items-center pt-24 pb-12 sm:pt-32 lg:items-end lg:pt-40 gap-6'>
 
-            <div className='flex flex-col text-left pr-30'>
-              <span className='text-white text-7xl font-extralight font-aspekta'>
+            <div className='flex w-full flex-col text-left lg:pr-30'>
+              <span className='text-white text-4xl sm:text-5xl lg:text-7xl font-extralight font-aspekta'>
                 Launch Pass
               </span>
 
-              <span className='text-white text-7xl font-extralight font-aspekta'>
+              <span className='text-white text-4xl sm:text-5xl lg:text-7xl font-extralight font-aspekta'>
                 Generated Yayyy....
               </span>
             </div>
 
 
-            <div className='pr-50 flex flex-col items-end gap-2'>
+            <div className='w-full flex flex-col items-center lg:items-end gap-3 lg:pr-50'>
 
               {loading && (
                 <div className='text-white text-xl'>
@@ -157,11 +181,11 @@ const LaunchSuccess = () => {
               {!loading && pdfUrl && !error && (
                 <>
 
-                  <div className='bg-transparent'>
+                  <div className='bg-transparent max-w-full overflow-x-auto'>
                     <Document file={pdfUrl}>
                       <Page
                         pageNumber={1}
-                        width={750}
+                        width={pdfWidth}
                         renderAnnotationLayer={false}
                         renderTextLayer={false}
                       />
