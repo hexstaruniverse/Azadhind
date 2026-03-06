@@ -141,7 +141,7 @@ const LaunchSuccess = () => {
       <Navbar />
 
       <div className='pt-18'>
-        <div className="w-full min-h-screen bg-[url('https://res.cloudinary.com/dc7bb6868/image/upload/v1772797323/Gemini_Generated_Image_efw7ybefw7ybefw7_1_fr4nfs.png')] bg-cover bg-top px-4 sm:px-8 lg:px-0 md:bg-[url('./assets/LaunchSuccessbg.png')] md:bg-center">
+        <div className="w-full min-h-screen bg-[url('https://res.cloudinary.com/dc7bb6868/image/upload/v1772797323/Gemini_Generated_Image_efw7ybefw7ybefw7_1_fr4nfs.png')] bg-top bg-[length:135%_auto] px-4 sm:bg-[length:115%_auto] sm:px-8 md:bg-cover md:bg-center lg:px-0">
           <div className='mx-auto flex w-full max-w-[1200px] flex-col items-center pb-12 pt-10 sm:pt-16 md:gap-6 md:pt-24 lg:items-end lg:pt-32'>
             <div className='w-full text-center md:text-left lg:pr-30'>
               <span className='block text-white text-3xl sm:text-5xl lg:text-7xl font-extralight font-aspekta leading-tight'>
